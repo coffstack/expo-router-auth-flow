@@ -1,9 +1,10 @@
+import { useAuth } from "@/state/AuthContext";
 import { Redirect, Stack } from "expo-router";
 import "react-native-reanimated";
 
-const isLoggedIn = true;
-
 export default function ProtectedLayout() {
+  const { isLoggedIn } = useAuth();
+
   if (!isLoggedIn) {
     return <Redirect href="/login" />;
   }
