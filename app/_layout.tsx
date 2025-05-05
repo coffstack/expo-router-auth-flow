@@ -26,8 +26,14 @@ export default function RootLayout() {
     <AuthProvider>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
         <Stack>
-          <Stack.Screen name="(protected)" options={{ headerShown: false }} />
-          <Stack.Screen name="login" options={{ headerShown: false }} />
+          <Stack.Screen
+            name="(protected)"
+            options={{ headerShown: false, animation: "none" }}
+          />
+          <Stack.Screen
+            name="login"
+            options={{ headerShown: false, animation: "none" }}
+          />
         </Stack>
         <StatusBar style="auto" />
       </ThemeProvider>
